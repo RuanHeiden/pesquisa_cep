@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pesquisa_cep/pesquisa_cep.dart';
+// ignore: depend_on_referenced_packages
+import 'package:get_it/get_it.dart';
 
+GetIt getIt = GetIt.instance;
 void main() {
   runApp(const MyApp());
+
+  //getIt.registerSingleton<Cep>(Cep());
+  getIt.registerSingleton<PesquisaCepServices>(PesquisaCepServices());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Pesquisa CEP Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -33,13 +39,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final getItPesquisaCepServices = getIt<PesquisaCepServices>();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: Center(
         child: FutureBuilder(
-          future: Cep.ConsultaCep('01001000'),
+          future: getItPesquisaCepServices.consultaCep('01001000'),
+
+          ///PesquisaCepServices.consultaCep('01001000'),
           builder: (context, snapshot) {
             if (snapshot.data == null) {
               return const Text('Cep Invalido');

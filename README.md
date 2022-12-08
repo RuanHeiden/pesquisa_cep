@@ -41,8 +41,8 @@ Importe o via_cep_serach no arquivo que sera usado
 Para obter mais informalçoesdo CEP, siga o exemplo a baixo;
 
 ```dart
-String myCEP = '01001000';
-ViaCepSearch.getInstance(myCEP);
+String myCEP = '01001000'; 
+PesquisaCepServices.consultaCep(myCEP);
 ```
 
 ## Additional information
