@@ -31,14 +31,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
           future: Cep.ConsultaCep('01001000'),
           builder: (context, snapshot) {
             if (snapshot.data == null) {
-              return Text('Cep Invalido');
+              return const Text('Cep Invalido');
             } else {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -69,11 +61,6 @@ class _MyHomePageState extends State<MyHomePage> {
             }
           },
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
