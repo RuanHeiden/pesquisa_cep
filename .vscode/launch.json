@@ -1,0 +1,45 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "pesquisa_cep",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "pesquisa_cep (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "pesquisa_cep (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "front_pesquisa_cep",
+            "cwd": "front_pesquisa_cep",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "front_pesquisa_cep (profile mode)",
+            "cwd": "front_pesquisa_cep",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "front_pesquisa_cep (release mode)",
+            "cwd": "front_pesquisa_cep",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
